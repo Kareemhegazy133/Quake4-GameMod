@@ -1,0 +1,8 @@
+player.def	// define new vars with default values
+Player.h	// define it here too
+Player.cpp	// implement functionality
+SpawnArgs<>	// pull it on spawn from this hashmap in Player.cpp
+
+** Use gameLocal.printf() for debugging purposes
+** ctrl alt ` opens up the console
+** give all in console gives all weapons
