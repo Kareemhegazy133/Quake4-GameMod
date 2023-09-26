@@ -4139,6 +4139,9 @@ idGameLocal::GetMapName
 ================
 */
 const char *idGameLocal::GetMapName( void ) const {
+	gameLocal.Printf("This mapFileName is: %s\n", mapFileName.c_str());
+	//idStr newMapFileName = idStr("maps/game/airdefense2.map");
+	//gameLocal.Printf("This newMapFileName is: %s\n", newMapFileName.c_str());
 	return mapFileName.c_str();
 }
 
