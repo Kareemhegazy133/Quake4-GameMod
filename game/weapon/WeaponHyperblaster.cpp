@@ -28,6 +28,7 @@ protected:
 	void					SpinUp				( void );
 	void					SpinDown			( void );
 
+	float				spreadZoom;
 private:
 
 	stateResult_t		State_Idle		( const stateParms_t& parms );
@@ -46,6 +47,7 @@ rvWeaponHyperblaster::rvWeaponHyperblaster
 ================
 */
 rvWeaponHyperblaster::rvWeaponHyperblaster ( void ) {
+	spreadZoom = spawnArgs.GetFloat("spreadZoom");
 }
 
 /*
@@ -228,8 +230,16 @@ stateResult_t rvWeaponHyperblaster::State_Fire ( const stateParms_t& parms ) {
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			SpinUp ( );
-			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			Attack ( false, 1, spread, 0, 1.0f );
+
+			if (wsfl.zoom) {
+				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier(PMOD_FIRERATE));
+				Attack(true, 1, spreadZoom, 0, 1.0f);
+			}
+			else {
+				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier(PMOD_FIRERATE));
+				Attack(false, 1, spread, 0, 1.0f);
+			}
+			
 			if ( ClipSize() ) {
 				viewModel->SetShaderParm ( HYPERBLASTER_SPARM_BATTERY, (float)AmmoInClip()/ClipSize() );
 			} else {

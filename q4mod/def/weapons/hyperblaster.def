@@ -141,6 +141,16 @@ entityDef weapon_hyperblaster
 	"hidesurface"				"models/weapons/hyperblaster/battery1"
 
   	"def_mod1"					"wpmod_hyperblaster_bounce1"
+	
+	// Scope / Zoom
+	"def_altprojectile"			"zoomed_projectile_hyperblaster"
+	"snd_zoomIn"				"weapon_machinegun_scope_in"
+	"snd_zoomOut"				"weapon_machinegun_scope_out"
+	"spreadzoom"				"0"
+	"zoomFov"					"50"
+	"zoomTime"					".1"
+	"zoomHideCrosshair"			"0"
+	"gui_zoom"					"guis/weapons/machinegun_scope.gui"
 
 	"net_syncPhysics"			"1"
 }
@@ -334,6 +344,13 @@ entityDef projectile_hyperblaster
 	
 	"fx_teleport_enter"		"effects/mp/item_teleport.fx"
 	"fx_teleport"			"effects/mp/item_teleport.fx"
+}
+
+entityDef zoomed_projectile_hyperblaster
+{
+	"inherit"					"projectile_hyperblaster"
+	
+	"size"						"2 2 2"
 }
 
 entityDef projectile_hyperblaster_mp
