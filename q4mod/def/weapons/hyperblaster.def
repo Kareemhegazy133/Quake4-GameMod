@@ -78,7 +78,7 @@ entityDef weapon_hyperblaster
 	"crosshairOffsetX"			"0"
 	"crosshairOffsetY"			"0"
 
-	"fireRate"					".08"
+	"fireRate"					"0.075"
 	"spread"					"2"
 	"spread_mp"					"0"
 
@@ -144,6 +144,7 @@ entityDef weapon_hyperblaster
 	
 	// Scope / Zoom
 	"def_altprojectile"			"zoomed_projectile_hyperblaster"
+	"altFireRate"				"0.1"
 	"snd_zoomIn"				"weapon_machinegun_scope_in"
 	"snd_zoomOut"				"weapon_machinegun_scope_out"
 	"spreadzoom"				"0"
