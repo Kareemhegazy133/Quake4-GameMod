@@ -1054,14 +1054,14 @@ entityDef player_marine_mp
 {
 	"inherit"			"player_marine"
 
-	"weapon"			"weapon_machinegun,weapon_gauntlet"
+	"weapon"			"weapon_hyperblaster,weapon_machinegun,weapon_blaster"
 	"current_weapon"		"1"
 
-	// replce blaster with gauntlet in MP
-	"def_weapon0"						"weapon_gauntlet"
-	"weapon0_best"						"1"
-	"weapon0_cycle"						"1"
-	"weapon0_flashlight"					"0"
+	// replace blaster with gauntlet in MP
+	// "def_weapon0"						"weapon_gauntlet"
+	// "weapon0_best"						"1"
+	// "weapon0_cycle"						"1"
+	// "weapon0_flashlight"					"0"
 
 	// remove MG flashlight in MP
 	"weapon1_flashlight"		"0"
