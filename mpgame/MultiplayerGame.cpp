@@ -1621,7 +1621,8 @@ bool idMultiplayerGame::AllPlayersReady( idStr* reason ) {
 
 	notReady = false;
 	
-	minClients = Max( 2, gameLocal.serverInfo.GetInt( "si_minPlayers" ) );
+	//minClients = Max( 2, gameLocal.serverInfo.GetInt( "si_minPlayers" ) );
+	minClients = 1;
 	numClients = NumActualClients( false, &team[ 0 ] );
 	if ( numClients < minClients ) { 
 		if( reason ) {

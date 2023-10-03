@@ -2940,6 +2940,25 @@ void Cmd_ToggleBuyMenu_f( const idCmdArgs& args ) {
 	}
 }
 
+void Cmd_Whereami_f(const idCmdArgs& args) {
+	idPlayer* player = gameLocal.GetLocalPlayer();
+	if (!player)
+	{
+		common->Printf("ERROR: Cmd_Whereami_f() failed, since GetLocalPlayer() was NULL.\n", player);
+		return;
+	}
+	idVec3 origin;
+	idMat3 axis;
+	player->GetPosition(origin, axis);
+	gameLocal.Printf("Current player's position is (%f, %f, %f)\n", origin.x, origin.y, origin.z);
+}
+
+void Cmd_PrintGameInfo_f(const idCmdArgs& args) {
+	gameLocal.Printf("Current Game Type/Mode: %d\n", gameLocal.gameType);
+	gameLocal.Printf("Current Game State: %d\n", gameLocal.GameState());
+	gameLocal.Printf("Current Game is multiplayer?: %d\n", gameLocal.IsMultiplayer());
+}
+
 void Cmd_BuyItem_f( const idCmdArgs& args ) {
 	idPlayer* player = gameLocal.GetLocalPlayer();
 	if ( !player ) {
@@ -3246,6 +3265,8 @@ void idGameLocal::InitConsoleCommands( void ) {
 // squirrel: Mode-agnostic buymenus
 	cmdSystem->AddCommand( "buyMenu",				Cmd_ToggleBuyMenu_f,		CMD_FL_GAME,				"Toggle buy menu (if in a buy zone and the game type supports it)" );
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
+	cmdSystem->AddCommand("whereami",				Cmd_Whereami_f,				CMD_FL_GAME,				"Returns the location of where the player is currently is in the world");
+	cmdSystem->AddCommand("gameInfo",				Cmd_PrintGameInfo_f,		CMD_FL_GAME,				"Prints out some game information");
 // RITUAL END
 
 }

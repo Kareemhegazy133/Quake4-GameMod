@@ -2934,7 +2934,7 @@ void Cmd_Whereami_f(const idCmdArgs& args) {
 	idPlayer* player = gameLocal.GetLocalPlayer();
 	if (!player)
 	{
-		common->Printf("ERROR: Cmd_Whereami_f() failed, sinec GetLocalPlayer() was NULL.\n", player);
+		common->Printf("ERROR: Cmd_Whereami_f() failed, since GetLocalPlayer() was NULL.\n", player);
 		return;
 	}
 	idVec3 origin;
@@ -3244,7 +3244,7 @@ void idGameLocal::InitConsoleCommands( void ) {
 // squirrel: Mode-agnostic buymenus
 	cmdSystem->AddCommand( "buyMenu",				Cmd_ToggleBuyMenu_f,		CMD_FL_GAME,				"Toggle buy menu (if in a buy zone and the game type supports it)" );
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
-	cmdSystem->AddCommand("whereami",				Cmd_Whereami_f,				CMD_FL_GAME,											"Returns the location of where the player is currently is in the world");
+	cmdSystem->AddCommand("whereami",				Cmd_Whereami_f,				CMD_FL_GAME,				"Returns the location of where the player is currently is in the world");
 // RITUAL END
 
 }
