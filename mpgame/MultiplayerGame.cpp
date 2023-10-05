@@ -150,7 +150,13 @@ void idMultiplayerGame::Reset() {
 	
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus
-	buyMenu = uiManager->FindGui( "guis/buymenu.gui", true, false, true );
+	gameLocal.Printf("Game Type before buy Menu is called is: %d\n", gameLocal.gameType);
+	if (gameLocal.gameType == 1) {
+		buyMenu = uiManager->FindGui("guis/ffabuymenu.gui", true, false, true);
+	}
+	else {
+		buyMenu = uiManager->FindGui("guis/buymenu.gui", true, false, true);
+	}
 	buyMenu->SetStateString( "field_credits", "$0.00");
 	buyMenu->SetStateBool( "gameDraw", true );
 // RITUAL END

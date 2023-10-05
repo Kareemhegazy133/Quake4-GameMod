@@ -19902,7 +19902,7 @@ windowDef Desktop
 			}
 
 			onAction {
-				consoleCMD "map mp/q4xdm15.map" ;
+				consoleCMD "map mp/q4dm1.map" ;
 				
 				set "cmd" "play main_menu_selection" ;
 			}

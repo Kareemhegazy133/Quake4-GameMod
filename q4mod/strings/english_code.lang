@@ -562,7 +562,7 @@
 	"#str_107676"	"Tourney"	
 	"#str_107677"	"Team Deathmatch"
 	"#str_107678"	"Capture the Flag"
-	"#str_107679"	"Deathmatch"
+	"#str_107679"	"Free For All"
 	"#str_107680"	"One Flag Capture the Flag"
 	"#str_107681"	"Arena Capture the Flag"
 	"#str_107682"	"Arena One Flag Capture the Flag"
@@ -677,7 +677,7 @@
 
 	"#str_110010"	"SHUFFLE TEAMS"	
 	
-	"#str_110011"	"DM"
+	"#str_110011"	"Free For All"
 	"#str_110012"	"Tourney"
 	"#str_110013"	"Team DM"
 	"#str_110014"	"CTF"

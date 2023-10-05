@@ -8,3 +8,7 @@ Quake4Config.cfg	// bind hotkeys to commands
 ** Use gameLocal.printf() for debugging purposes
 ** ctrl alt ` opens up the console
 ** give all in console gives all weapons
+
+For Me:
+
+*Free For All is derived from DM (The Fragging Yard Map: q4dm1)
