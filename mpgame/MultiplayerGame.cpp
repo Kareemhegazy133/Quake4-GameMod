@@ -667,6 +667,11 @@ bool idMultiplayerGame::CanCapture( int team ) {
 
 void idMultiplayerGame::FlagCaptured( idPlayer *player ) {
 	if( !gameLocal.isClient ) {
+		//Mine
+		// Announce bomb has been planted
+		player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123016"));
+		player->mphud->HandleNamedEvent("main_notice");
+
 		AddTeamScore( player->team, 1 );
 		AddPlayerTeamScore( player, 5 );
 		
