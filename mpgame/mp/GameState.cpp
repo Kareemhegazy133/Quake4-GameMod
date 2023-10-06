@@ -1215,9 +1215,19 @@ void rvCTFGameState::GameStateChanged( void ) {
 
 				if ( !player->spectating ) {
 					if ( flagTeam == player->team ) {
-						player->mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_107723" ) );
+						if (player->team == 1) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123013"));
+						}
+						else if (player->team == 0) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123012"));
+						}
 					} else {
-						player->mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104420" ) );
+						if (player->team == 1) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123014"));
+						}
+						else if (player->team == 0) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123015"));
+						}
 					}
 
 					player->mphud->HandleNamedEvent( "main_notice" );

@@ -1868,8 +1868,14 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 // shouchard:  hack for CTF drop messages for listen servers
 	if ( dead == gameLocal.GetLocalPlayer() && 
 		dead->PowerUpActive( dead->team ? POWERUP_CTF_MARINEFLAG : POWERUP_CTF_STROGGFLAG ) ) {
-		if ( dead->mphud ) {
-			dead->mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104420" ) );
+		if ( dead->mphud) {
+			//Mine
+			if (dead->team == 1) {
+				dead->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123014"));
+			}
+			else if (dead->team == 0) {
+				dead->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123015"));
+			}
 			dead->mphud->HandleNamedEvent( "main_notice" );
 		}
 	}
