@@ -2063,7 +2063,8 @@ bool rvItemCTFFlag::GiveToPlayer( idPlayer* player ) {
 // squirrel: Mode-agnostic buymenus
 			player->GiveCash( (float)gameLocal.mpGame.mpBuyingManager.GetIntValueForKey( "playerCashAward_flagReturned", 0 ) );
 // RITUAL END
-		} else if ( player->PowerUpActive ( enemyPowerup ) ) {
+			// Mine: Second if check to restrict capturing to only strogg team
+		} else if ( player->PowerUpActive ( enemyPowerup ) && player->team == 1) {
 			// If they have the enemy flag then they score
 			if ( !gameLocal.mpGame.CanCapture ( player->team ) ) {
 				return false;
