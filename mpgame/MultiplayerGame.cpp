@@ -1038,7 +1038,7 @@ void idMultiplayerGame::UpdateDMScoreboard( idUserInterface *scoreBoard ) {
 	scoreBoard->SetStateString( "servertimelimit", va( "%s: %d", common->GetLocalizedString( "#str_107659" ), gameLocal.serverInfo.GetInt( "si_timeLimit" ) ) );
 	scoreBoard->SetStateString( "serverlimit", va( "%s: %d", common->GetLocalizedString( "#str_107660" ), gameLocal.serverInfo.GetInt( "si_fragLimit" ) ) );
 
-	int timeLimit = gameLocal.serverInfo.GetInt( "si_timeLimit" );
+	int timeLimit = gameLocal.serverInfo.GetInt( "si_timeLimit");
 	mpGameState_t state = gameState->GetMPGameState();
 
 	bool inNonTimedState = (state == SUDDENDEATH) || (state == WARMUP) || (state == GAMEREVIEW);
@@ -1479,16 +1479,15 @@ void idMultiplayerGame::UpdateTestScoreboard ( idUserInterface *scoreBoard ) {
 			scoreBoard->SetStateString ( 
 				va("scores_item_%i", i), 
 				va("%s\t%s\t%s\t%s\t%s\t%s\t%i\t%i\t%i\t", 
-				( gameLocal.random.RandomInt() % 2 ? I_VOICE_DISABLED : I_VOICE_ENABLED ),		// mute icon
+				( gameLocal.random.RandomInt() % 2 ? I_VOICE_DISABLED : I_VOICE_ENABLED ),			// mute icon
 				( gameLocal.random.RandomInt() % 2 ? I_FRIEND_ENABLED : I_FRIEND_DISABLED ),		// friend icon
 				"",																					// shouchard:  flag
-				name.c_str(),								// name
-				"Clan",								// clan
+				name.c_str(),																		// name
+				"Clan",																				// clan
 				"",																					// team score (unused in DM)
-				gameLocal.random.RandomInt ( 50 ),								 										// score
-				gameLocal.random.RandomInt ( 10 ),														// time
+				gameLocal.random.RandomInt ( 50 ),								 					// score
+				gameLocal.random.RandomInt ( 10 ),													// time
 				gameLocal.random.RandomInt ( 300 ) + 20 ) );		
-
 
 		}
 		// clear remaining lines (empty slots)	

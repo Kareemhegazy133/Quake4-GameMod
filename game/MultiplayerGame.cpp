@@ -1527,7 +1527,7 @@ const char *idMultiplayerGame::GameTime( void ) {
 			idStr::snPrintf( buff, sizeof( buff ), "%s %i", (gameState->GetMPGameState() == COUNTDOWN && gameLocal.gameType == GAME_TOURNEY) ? common->GetLocalizedString( "#str_107721" ) : common->GetLocalizedString( "#str_107706" ), s );
 		}
 	} else {
-		int timeLimit = gameLocal.serverInfo.GetInt( "si_timeLimit" );
+		int timeLimit = gameLocal.serverInfo.GetInt( "si_timeLimit", "1.3");
 		int startTime = matchStartedTime;
 		if( gameLocal.gameType == GAME_TOURNEY ) {
 			if( gameLocal.GetLocalPlayer() ) {

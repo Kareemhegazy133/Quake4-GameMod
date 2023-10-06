@@ -4756,7 +4756,9 @@ bool idPlayer::GivePowerUp( int powerup, int time, bool team ) {
 			// shouchard:  added notice for picking up the flag
 			if ( playClientEffects && this == gameLocal.GetLocalPlayer() ) {
 				if ( mphud ) {
-					mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104419" ) );
+					//mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104419" ) );
+					//Mine
+					mphud->SetStateString("main_notice_text", common->GetLocalizedString("str_123010"));
 					mphud->HandleNamedEvent( "main_notice" );
 				}
 			}
@@ -4768,7 +4770,9 @@ bool idPlayer::GivePowerUp( int powerup, int time, bool team ) {
 			// shouchard:  added notice for picking up the flag
 			if ( playClientEffects && this == gameLocal.GetLocalPlayer() ) {
 				if ( mphud ) {
-					mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104419" ) );
+					//mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104419" ) );
+					//Mine
+					mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123011"));
 					mphud->HandleNamedEvent( "main_notice" );
 				}
 			}

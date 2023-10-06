@@ -736,6 +736,8 @@
 	"#str_123007"	"Game"
 	"#str_123008"	"all"
 	"#str_123009"	"Tickrate"
-	
+	"#str_123010"	"YOU HAVE THE BOMB"
+	"#str_123011"	"YOU HAVE THE DEFUSER"
+
 }
 

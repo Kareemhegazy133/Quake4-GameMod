@@ -1275,7 +1275,12 @@ void rvCTFGameState::GameStateChanged( void ) {
 
 					if ( !player->spectating ) {
 						// shouchard:  inform the GUI that you've taken the flag
-						player->mphud->SetStateString( "main_notice_text", common->GetLocalizedString( "#str_104419" ) );
+						if (player->team == 1) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123010"));
+						}
+						else if (player->team == 0) {
+							player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123011"));
+						}
 						player->mphud->HandleNamedEvent( "main_notice" );
 					}
 				} else if ( !noSounds ) {
