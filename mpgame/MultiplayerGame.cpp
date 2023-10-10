@@ -154,6 +154,9 @@ void idMultiplayerGame::Reset() {
 	if (gameLocal.gameType == 1) {
 		buyMenu = uiManager->FindGui("guis/ffabuymenu.gui", true, false, true);
 	}
+	else if (gameLocal.gameType == 4){
+		buyMenu = uiManager->FindGui("guis/unratedbuymenu.gui", true, false, true);
+	}
 	else {
 		buyMenu = uiManager->FindGui("guis/buymenu.gui", true, false, true);
 	}
@@ -688,7 +691,7 @@ void idMultiplayerGame::FlagCaptured( idPlayer *player ) {
 // RITUAL END
 
 		gameLocal.ClearForwardSpawns();
-		
+		gameLocal.Printf("AssasultPoints Num is: %d\n", assaultPoints.Num());
 		for( int i = 0; i < assaultPoints.Num(); i++ ) {
 			assaultPoints[ i ]->Reset();
 			((rvCTFGameState*)gameState)->SetAPOwner( i, AS_NEUTRAL );

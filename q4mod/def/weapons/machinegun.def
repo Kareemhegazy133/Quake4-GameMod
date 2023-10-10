@@ -172,11 +172,11 @@ entityDef weapon_machinegun
 	"weaponOffsetScale"			"0.002"
 
 	// Scope / Zoom
-	"spreadzoom"				"0"
-	"zoomFov"					"50"
-	"zoomTime"					".1"
-	"zoomHideCrosshair"			"0"
-	"gui_zoom"					"guis/weapons/machinegun_scope.gui"
+	// "spreadzoom"				"0"
+	// "zoomFov"					"50"
+	// "zoomTime"					".1"
+	// "zoomHideCrosshair"			"0"
+	// "gui_zoom"					"guis/weapons/machinegun_scope.gui"
 
  	"hidesurface"				"models/weapons/blaster/flare"
 

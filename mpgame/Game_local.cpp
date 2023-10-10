@@ -1813,6 +1813,7 @@ bool idGameLocal::NextMap( void ) {
 // rjohnson: traditional map cycle
 //		si_mapCycle "mp/q4dm4;mp/q4dm5;mp/q4dm6"
 	mapCycleList = si_mapCycle.GetString();
+	gameLocal.Printf("MapCycle: %s\n", si_mapCycle.GetString());
 	if ( mapCycleList && strlen( mapCycleList ) ) {
 		idLexer src;
 		idToken token, firstFound;
