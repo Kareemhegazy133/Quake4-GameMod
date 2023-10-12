@@ -352,9 +352,9 @@ rvAIManager::GetEnemyTeam
 idActor* rvAIManager::GetEnemyTeam ( aiTeam_t team ) {
 	switch ( team ) {
 		case AITEAM_MARINE:
-			return teams[AITEAM_STROGG].Next();
-		case AITEAM_STROGG:
 			return teams[AITEAM_MARINE].Next();
+		case AITEAM_STROGG:
+			return teams[AITEAM_STROGG].Next();
 	}
 	return NULL;		
 }
@@ -367,9 +367,9 @@ rvAIManager::GetAllyTeam
 idActor* rvAIManager::GetAllyTeam ( aiTeam_t team ) {
 	switch ( team ) {
 		case AITEAM_MARINE:
-			return teams[AITEAM_MARINE].Next();
-		case AITEAM_STROGG:
 			return teams[AITEAM_STROGG].Next();
+		case AITEAM_STROGG:
+			return teams[AITEAM_MARINE].Next();
 	}
 	return NULL;		
 }

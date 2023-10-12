@@ -1136,9 +1136,9 @@ idAI::Think
 =====================
 */
 void idAI::Think( void ) {
-
 	// if we are completely closed off from the player, don't do anything at all
 	if ( CheckDormant() ) {
+		gameLocal.Printf("AI Dormant\n");
 		return;
 	}
 
@@ -1202,11 +1202,7 @@ void idAI::Think( void ) {
 			UpdateStates();
 
 			// run all movement commands
-			// grunt is the bomb, dont move
-			if (enemyEnt->name.c_str() != "rvMonsterGrunt_monster_grunt_919") {
-				gameLocal.Printf("Grunt wont move\n");
-				Move();
-			}
+			Move();
 
 			// if not dead, chatter and blink
 			if( move.moveType != MOVETYPE_DEAD ){
