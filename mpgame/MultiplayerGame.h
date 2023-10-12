@@ -505,6 +505,7 @@ public:
 	void			AddTeamPowerup(int powerup, int time, int team);
 	void			UpdateTeamPowerups();
 	void			SetUpdateForTeamPowerups(int team);
+	void			Spawn(const idCmdArgs& args);
 // RITUAL END
 
 	void			Precache( void );

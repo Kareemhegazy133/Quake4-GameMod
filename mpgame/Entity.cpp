@@ -3664,7 +3664,7 @@ void idEntity::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 		// do the damage
 		//jshepard: this is kinda important, no?
 		health -= damage;
-
+		gameLocal.Printf("health is: %d\n", health);
 		if ( health <= 0 ) {
 			if ( health < -999 ) {
 				health = -999;

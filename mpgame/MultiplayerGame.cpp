@@ -675,6 +675,14 @@ void idMultiplayerGame::FlagCaptured( idPlayer *player ) {
 		player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123016"));
 		player->mphud->HandleNamedEvent("main_notice");
 
+		// Spawn something code
+		idCmdArgs args;
+		args.AppendArg("spawn");
+		args.AppendArg("monster_grunt");
+
+		gameLocal.Printf("Args command is: %s\n", args.Args(0, -1, false));
+		Spawn(args);
+
 		AddTeamScore( player->team, 1 );
 		AddPlayerTeamScore( player, 5 );
 		
@@ -9289,6 +9297,47 @@ void idMultiplayerGame::SetUpdateForTeamPowerups(int team)
 	}
 }
 
-// RITUAL END
 
+void idMultiplayerGame::Spawn(const idCmdArgs& args) {
+#ifndef _MPBETA
+	const char* key, * value;
+	int			i;
+	float		yaw;
+	idVec3		org;
+	idPlayer* player;
+	idDict		dict;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+
+	yaw = player->viewAngles.yaw;
+
+	value = args.Argv(1);
+	dict.Set("classname", value);
+	dict.Set("angle", va("%f", yaw + 180));
+
+	org = player->GetPhysics()->GetOrigin() + idAngles(0, yaw, 0).ToForward() * 80 + idVec3(0, 0, 1);
+	dict.Set("origin", org.ToString());
+
+	for (i = 2; i < args.Argc() - 1; i += 2) {
+
+		key = args.Argv(i);
+		value = args.Argv(i + 1);
+
+		dict.Set(key, value);
+	}
+
+	// RAVEN BEGIN
+	// kfuller: want to know the name of the entity I spawned
+	idEntity* newEnt = NULL;
+	gameLocal.SpawnEntityDef(dict, &newEnt);
+
+	if (newEnt) {
+		gameLocal.Printf("spawned entity '%s'\n", newEnt->name.c_str());
+	}
+	// RAVEN END
+#endif // !_MPBETA
+}
 

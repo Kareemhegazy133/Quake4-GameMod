@@ -2954,6 +2954,7 @@ void Cmd_Whereami_f(const idCmdArgs& args) {
 }
 
 void Cmd_PrintGameInfo_f(const idCmdArgs& args) {
+	gameLocal.Printf("Args command is: %s\n", args.Args(0, -1, false));
 	gameLocal.Printf("Current Game Type/Mode: %d\n", gameLocal.gameType);
 	gameLocal.Printf("Current Game State: %d\n", gameLocal.GameState());
 	gameLocal.Printf("Current Game is multiplayer?: %d\n", gameLocal.IsMultiplayer());

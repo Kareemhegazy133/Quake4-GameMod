@@ -1202,7 +1202,11 @@ void idAI::Think( void ) {
 			UpdateStates();
 
 			// run all movement commands
-			Move();
+			// grunt is the bomb, dont move
+			if (enemyEnt->name.c_str() != "rvMonsterGrunt_monster_grunt_919") {
+				gameLocal.Printf("Grunt wont move\n");
+				Move();
+			}
 
 			// if not dead, chatter and blink
 			if( move.moveType != MOVETYPE_DEAD ){
@@ -1517,6 +1521,7 @@ idAI::AdjustHealthByDamage
 =====================
 */
 void idAI::AdjustHealthByDamage	( int damage ) {
+	gameLocal.Printf("Undying mode?: %d\n", aifl.undying);
 	if ( aifl.undying ) {
 		return;
 	}	

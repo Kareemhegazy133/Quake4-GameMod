@@ -224,11 +224,13 @@ rvMonsterGrunt::AdjustHealthByDamage
 =====================
 */
 void rvMonsterGrunt::AdjustHealthByDamage ( int damage ) {
+	gameLocal.Printf("In AdjustHealthByDamage for MonsterGrunt\n");
 	// Take less damage during enrage process 
 	if ( rageThreshold && health < rageThreshold ) { 
 		health -= (damage * 0.25f);
 		return;
 	}
+	gameLocal.Printf("Passed the if check In AdjustHealthByDamage for MonsterGrunt\n");
 	return idAI::AdjustHealthByDamage ( damage );
 }
 
