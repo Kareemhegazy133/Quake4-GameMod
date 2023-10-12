@@ -271,7 +271,8 @@ class idMultiplayerGame {
 public:
 
 					idMultiplayerGame();
-
+	bool			bombPlanted;
+	bool			bombDefused;
 	void			Shutdown( void );
 
 	// resets everything and prepares for a match

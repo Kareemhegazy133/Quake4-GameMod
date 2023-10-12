@@ -88,6 +88,8 @@ idMultiplayerGame::idMultiplayerGame() {
 	deadZonePowerupCount = -1;
 	marineScoreBarPulseAmount = 0.0f;
 	stroggScoreBarPulseAmount = 0.0f;
+	bombPlanted = false;
+	bombDefused = false;
 
 	memset( lights, 0, sizeof( lights ) );
 	memset( lightHandles, -1, sizeof( lightHandles ) );
@@ -672,6 +674,8 @@ void idMultiplayerGame::FlagCaptured( idPlayer *player ) {
 	if( !gameLocal.isClient ) {
 		//Mine
 		// Announce bomb has been planted
+		gameLocal.mpGame.bombPlanted = true;
+		gameLocal.Printf("planted, bombplanted?: %d\n", gameLocal.mpGame.bombPlanted);
 		player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123016"));
 		player->mphud->HandleNamedEvent("main_notice");
 

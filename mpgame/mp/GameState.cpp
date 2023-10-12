@@ -839,7 +839,18 @@ void rvDMGameState::Run( void ) {
 				
 			} else if ( gameLocal.mpGame.TimeLimitHit() ) {
 				gameLocal.mpGame.PrintMessageEvent( -1, MSG_TIMELIMIT );
-				if( tiedForFirst ) {
+				gameLocal.Printf("timelimit, bombplanted?: %d\n", gameLocal.mpGame.bombPlanted);
+				if (gameLocal.mpGame.bombPlanted == false)
+				{
+					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123018"));
+					player->mphud->HandleNamedEvent("main_notice");
+					// announce next round starting in...
+					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123020"));
+					player->mphud->HandleNamedEvent("main_notice");
+					fragLimitTimeout = gameLocal.time + 1000;
+					NewState( GAMEON );
+				}
+				else if( tiedForFirst ) {
 					// if tied at timelimit hit, goto sudden death
 					fragLimitTimeout = 0;
 					NewState( SUDDENDEATH );
