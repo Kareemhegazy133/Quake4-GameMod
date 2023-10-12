@@ -196,6 +196,10 @@ rvMonsterGrunt::OnDeath
 */
 void rvMonsterGrunt::OnDeath ( void ) {
 	RageStop ( );
+	// Announce bomb has been defused
+	idPlayer* player = gameLocal.GetLocalPlayer();
+	player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123017"));
+	player->mphud->HandleNamedEvent("main_notice");
 	return idAI::OnDeath ( );
 }
 
