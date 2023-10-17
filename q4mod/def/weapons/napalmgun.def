@@ -250,7 +250,7 @@ model weapon_napalmgun_world
 entityDef projectile_napalm
 {
 	"spawnclass"				"idProjectile"
-	"size"						"7 7 7"
+	"size"						"10 10 10"
 	"cone"						"2"
 	"noshadows"					"1"
 	"clipmask_largeshot"		"1"
@@ -277,7 +277,7 @@ entityDef projectile_napalm
 	"detonate_on_actor"			"1"
 								
 	"impact_gib"				"1"
-	"decal_size"				"75"
+	"decal_size"				"200"
 
 	"flyEffectAttenuateSpeed"	"200"
 	
@@ -322,7 +322,7 @@ entityDef impact_napalm_projectile
 {
 	//"inherit"	"projectile_grenade"
 	"spawnclass"				"idProjectile"
-	"size"						"1 1 1"
+	"size"						"5 5 5"
 	"noshadows"					"1"
 	"clipmask_largeshot"		"0"
 	"no_contents"				"0"

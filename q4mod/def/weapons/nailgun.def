@@ -106,7 +106,7 @@ entityDef weapon_nailgun
 
 	"joint_world_flash"			"nailgun_rotating_drum"
 
-	"fireRate"					".16"
+	"fireRate"					"1"
 	"spread"					"3"
 	"spread_mp"					"0"
 	"spreadSeek"				"5"
@@ -188,7 +188,7 @@ entityDef weapon_nailgun
 entityDef weapon_nailgun_mp
 {
 	"inherit"				"weapon_nailgun"
-	"clipsize"				"15"
+	"clipsize"				"30"
 	"def_mod3"				"weaponmod_nailgun_power"
 	"hidesurface"				"models/weapons/nailgun_mod_ammo"
 	"editor_ignore"				"1"
