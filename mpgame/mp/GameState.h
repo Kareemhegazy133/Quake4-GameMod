@@ -35,6 +35,7 @@ typedef enum {
 	WARMUP,								// warming up
 	COUNTDOWN,							// post warmup pre-game
 	GAMEON,								// game is on
+	GAMEROUNDS,								// game is on but round++
 	SUDDENDEATH,						// game is on but in sudden death, first frag wins
 	GAMEREVIEW,							// game is over, scoreboard is up. we wait si_gameReviewPause seconds (which has a min value)
 	NEXTGAME,

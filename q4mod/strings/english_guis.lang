@@ -3,9 +3,9 @@
 //
 
 {
-	"#str_200000"	"START NEW GAME"
+	"#str_200000"	"HELP SCREEN"
 	"#str_200001"	"LOAD GAME"
-	"#str_200002"	"MULTIPLAYER"
+	"#str_200002"	"PLAY MULTIPLAYER"
 	"#str_200003"	"SAVE GAME"
 	"#str_200004"	"QUIT CURRENT GAME"
 	"#str_200005"	"RETURN TO GAME"
@@ -1114,4 +1114,6 @@
 	"#str_223007"	"Gun Position"
 	"#str_223008"	"Right;Centered;Lower Right"
 	"#str_223009"	"Enable detailed sky"
+	"#str_223010"	"THIS IS HOW YOU PLAY THIS MOD: Click on Play MULTIPLAYER -> Create Server -> Pick Team Mode: Unrated, FFA, SPIKERUSH -> Start your game"
+	"#str_223011"	"QUALORANT"
 }

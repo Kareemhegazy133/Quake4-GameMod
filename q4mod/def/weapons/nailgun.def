@@ -188,8 +188,8 @@ entityDef weapon_nailgun
 entityDef weapon_nailgun_mp
 {
 	"inherit"				"weapon_nailgun"
-	"clipsize"				"0"
-	"def_mod3"				""
+	"clipsize"				"15"
+	"def_mod3"				"weaponmod_nailgun_power"
 	"hidesurface"				"models/weapons/nailgun_mod_ammo"
 	"editor_ignore"				"1"
 	"inv_icon"				"gfx/guis/hud/icons/item_nailgun_colored.tga"

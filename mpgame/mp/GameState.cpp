@@ -574,6 +574,7 @@ void rvGameState::NewState( mpGameState_t newState ) {
 			}
 			break;
 		}
+
 		case SUDDENDEATH: {
 			gameLocal.mpGame.PrintMessageEvent( -1, MSG_SUDDENDEATH );
 			//unmark all leaders, so we make sure we only let the proper people respawn
@@ -839,18 +840,8 @@ void rvDMGameState::Run( void ) {
 				
 			} else if ( gameLocal.mpGame.TimeLimitHit() ) {
 				gameLocal.mpGame.PrintMessageEvent( -1, MSG_TIMELIMIT );
-				gameLocal.Printf("timelimit, bombplanted?: %d\n", gameLocal.mpGame.bombPlanted);
-				if (gameLocal.mpGame.bombPlanted == false)
-				{
-					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123018"));
-					player->mphud->HandleNamedEvent("main_notice");
-					// announce next round starting in...
-					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123020"));
-					player->mphud->HandleNamedEvent("main_notice");
-					fragLimitTimeout = gameLocal.time + 1000;
-					NewState( GAMEON );
-				}
-				else if( tiedForFirst ) {
+
+				if( tiedForFirst ) {
 					// if tied at timelimit hit, goto sudden death
 					fragLimitTimeout = 0;
 					NewState( SUDDENDEATH );
@@ -1357,7 +1348,27 @@ void rvCTFGameState::Run( void ) {
 				fragLimitTimeout = 0; 
 			} else if ( gameLocal.mpGame.TimeLimitHit() ) {
 				gameLocal.mpGame.PrintMessageEvent( -1, MSG_TIMELIMIT );
-				if( tiedForFirst ) {
+
+				idPlayer* player = gameLocal.GetLocalPlayer();
+				gameLocal.Printf("timelimit, bombplanted?: %d\n", gameLocal.mpGame.bombPlanted);
+				if (gameLocal.mpGame.bombPlanted == false)
+				{
+					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123018"));
+					player->mphud->HandleNamedEvent("main_notice");
+
+					gameLocal.mpGame.AddTeamScore(0, 1);
+					gameLocal.Printf("Bomb didnt get planted! %d\n", gameLocal.mpGame.GetScoreForTeam(0));
+					// announce next round starting in...
+					player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123020"));
+					player->mphud->HandleNamedEvent("main_notice");
+					fragLimitTimeout = gameLocal.time + 1000;
+					NewState(GAMEON);
+				}
+				else if (gameLocal.mpGame.bombPlanted == true) {
+					gameLocal.mpGame.AddTeamScore(1, 1);
+					gameLocal.Printf("Bomb got planted! %d\n", gameLocal.mpGame.GetScoreForTeam(1));
+				}
+				else if( tiedForFirst ) {
 					// if tied at timelimit hit, goto sudden death
 					fragLimitTimeout = 0;
 					NewState( SUDDENDEATH );

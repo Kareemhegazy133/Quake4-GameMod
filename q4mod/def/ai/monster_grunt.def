@@ -465,11 +465,11 @@ entityDef monster_grunt
 	"attackRange"							"0 700"
 	
 	"tactical_ranged"						"0"
-	"tactical_rush"							"1"
+	"tactical_rush"							"0"
 	"tactical_cover"						"0"
-	"tactical_hide"							"1"
+	"tactical_hide"							"0"
 
-	"melee_range"							"72"	
+	"melee_range"							"0"	
 	
 	"def_attack_chaingun"					"hitscan_grunt_bullet"
 	"attack_chaingun_hitscan"				"1"

@@ -70,7 +70,7 @@ entityDef weapon_rocketlauncher
 	"joint_world_flash"			"muzzle_flash"
 
 	"inv_weapon"				"weapon_rocketlauncher"
-	"inv_start_ammo_rocketlauncher"	"10"
+	"inv_start_ammo_rocketlauncher"	"1"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_rocket.tga"
 	"inv_name"					"#str_107409"	
@@ -321,7 +321,7 @@ entityDef weaponmod_rocketlauncher_homing
 entityDef projectile_rocket
 {
 	"spawnclass"				"idProjectile"
-	"size"						"7 7 7"
+	"size"						"15 15 15"
 	"cone"						"2"
 	"noshadows"					"1"
 	"clipmask_largeshot"		"1"
@@ -330,7 +330,7 @@ entityDef projectile_rocket
 	"def_damage"				"damage_rocketDirect"
 	"def_splash_damage"			"damage_rocketSplash"
 																											
-	"speed"						"900"
+	"speed"						"1200"
 	"fuse"						"6"
 	"push"						"48000"
 	
@@ -342,7 +342,7 @@ entityDef projectile_rocket
 	"detonate_on_bounce"		"1"
 								
 	"impact_gib"				"1"								
-	"decal_size"				"75"
+	"decal_size"				"100"
 
 	"fx_fly"				"effects/weapons/rocketlauncher/fly.fx"
 	"fx_fly_mp"				"effects/weapons/rocketlauncher/fly_mp.fx"
@@ -370,7 +370,7 @@ entityDef projectile_rocket_mp
 	"inherit"					"projectile_rocket"
 	"predictTime"				"50"
 	"speed"						"935"
-	"size"						"5 5 5"
+	"size"						"8 8 8"
 	"no_impact_prediction"		"1"
 }
 
@@ -414,7 +414,7 @@ entityDef damage_rocketDirect_mp
 entityDef damage_rocketSplash 
 {
 	"damage"					"150"
-	"radius"					"180"
+	"radius"					"360"
 	"knockback"					"100"
 	"push"						"10000"
 	"gib"						"0"
@@ -433,5 +433,5 @@ entityDef damage_rocketSplash_mp
 	"inherit"					"damage_rocketSplash"
 	"knockback"					"110"
 	"damage"					"100"
-	"radius"					"120"
+	"radius"					"360"
 }

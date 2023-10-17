@@ -547,11 +547,22 @@ void Cmd_Give_f( const idCmdArgs &args ) {
 	idPlayer	*player;
 
 	player = gameLocal.GetLocalPlayer();
-	if ( !player || !gameLocal.CheatsOk() ) {
+	if ( !player) {
 		return;
 	}
 
 	GiveStuffToPlayer( player, args.Argv(1), args.Argv(2) );
+}
+
+void Cmd_GiveAll_f(const idCmdArgs& args) {
+	idPlayer* player;
+
+	player = gameLocal.GetLocalPlayer();
+	if (!player) {
+		return;
+	}
+
+	GiveStuffToPlayer(player, args.Argv(1), args.Argv(2));
 }
 // RITUAL END
 
@@ -3268,7 +3279,8 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "buy",					Cmd_BuyItem_f,				CMD_FL_GAME,				"Buy an item (if in a buy zone and the game type supports it)" );
 	cmdSystem->AddCommand("whereami",				Cmd_Whereami_f,				CMD_FL_GAME,				"Returns the location of where the player is currently is in the world");
 	cmdSystem->AddCommand("gameInfo",				Cmd_PrintGameInfo_f,		CMD_FL_GAME,				"Prints out some game information");
-// RITUAL END
+	cmdSystem->AddCommand("giveall",				Cmd_GiveAll_f,				CMD_FL_GAME,				"gives one or more items");
+	// RITUAL END
 
 }
 
