@@ -3321,7 +3321,8 @@ void idMultiplayerGame::ReportZoneControllingPlayer( idPlayer* player )
 
 	if ( !player )
 		return;
-
+	player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123021"));
+	player->mphud->HandleNamedEvent("main_notice");
 	playerState[player->entityNumber].deadZoneScore += gameLocal.GetMSec();
 	playerState[player->entityNumber].teamFragCount = playerState[player->entityNumber].deadZoneScore / 1000;
 

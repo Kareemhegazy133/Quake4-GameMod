@@ -110,7 +110,7 @@
 	"#str_104406"	"USAGE: clientcallvote timelimit <value>\n"
 	"#str_104407"	"USAGE: clientcallvote fraglimit <value>\n"
 	"#str_104408"	"USAGE: clientcallvote gametype <gametype>\n"
-	"#str_104409"	"\tvalid gametypes are DM, Tourney, Team DM, Unrated, Arena CTF, and DeadZone\n"
+	"#str_104409"	"\tvalid gametypes are DM, Tourney, Team DM, Unrated, Arena CTF, and SpikeRush\n"
 	"#str_104410"	"USAGE: clientcallvote gametype <gametype>\n"
 	"#str_104412"	"USAGE: clientcallvote kick <playername>\n"
 	"#str_104413"	"USAGE: clientcallvote map <mapname>\n"
@@ -562,7 +562,7 @@
 	"#str_107676"	"Tourney"	
 	"#str_107677"	"Team Deathmatch"
 	"#str_107678"	"Unrated"
-	"#str_107679"	"Free For All"
+	"#str_107679"	"Custom"
 	"#str_107680"	"One Flag Capture the Flag"
 	"#str_107681"	"Arena Capture the Flag"
 	"#str_107682"	"Arena One Flag Capture the Flag"
@@ -677,7 +677,7 @@
 
 	"#str_110010"	"SHUFFLE TEAMS"	
 	
-	"#str_110011"	"Free For All"
+	"#str_110011"	"Custom"
 	"#str_110012"	"Tourney"
 	"#str_110013"	"Team DM"
 	"#str_110014"	"Unrated"
@@ -699,9 +699,9 @@
 
 	// Ritual 1.3 patch code strings : #str_122000 - #str_122999
 	"#str_122000"	"Get to the Dead Zone!"
-	"#str_122001"	"DeadZone"
+	"#str_122001"	"SpikeRush"
 	"#str_122002"	"USAGE: clientcallvote controlTime <value>\n"
-	"#str_122003"	"DeadZone Powerup"
+	"#str_122003"	"SpikeRush Powerup"
 	"#str_122004"	"Team Ammo Regen"
 	"#str_122005"	"Team Health Regen"
 	"#str_122006"	"Team Doubler"
@@ -747,4 +747,5 @@
 	"#str_123018"	"BOMB NOT PLANTED, MARINES WIN!"
 	"#str_123019"	"BOMB EXPLODED, STROGGS WIN!"
 	"#str_123020"	"NEXT ROUND STARTING..."
+	"#str_123021"	"ZONE IS BEING CONTROLLED..."
 
