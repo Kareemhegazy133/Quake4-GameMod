@@ -310,7 +310,7 @@ entityDef projectile_dmg
 																											
 	"speed"					"250"
 	
-	"delay_splash"				".45"
+	"delay_splash"				"2"
 	
 	"linear_friction"			"0"
 	"angular_friction"			"0"
@@ -325,7 +325,7 @@ entityDef projectile_dmg
 	"impact_gib"				"1"								
 	"decal_size"				"75"
 
-	"flyEffectAttenuateSpeed"		"200"
+	"flyEffectAttenuateSpeed"		"500"
 
 	"fx_fly"				"effects/weapons/dmg/fly.fx"
 	"fx_detonate"				"effects/weapons/dmg/impact_default.fx"
@@ -363,8 +363,8 @@ entityDef damage_dmg_mp
 
 entityDef damage_dmg_splash_mp
 {
-	"damage"					"100"
-	"radius"					"768"
+	"damage"					"0"
+	"radius"					"1000"
 	"gib"						"1"
 
 	/*
@@ -392,7 +392,7 @@ entityDef projectile_dmg_mp
 	"spawnclass"				"idProjectile"
 	"mins"						"-10 -10 -10"
 	"maxs"						"10 10 10"
-	"cone"						"2"
+	"cone"						"10"
 	"noshadows"					"1"
 	"clipmask_largeshot"		"1"
 								
@@ -412,7 +412,7 @@ entityDef projectile_dmg_mp
 	"detonate_on_bounce"		"1"
 								
 	"impact_gib"				"1"								
-	"decal_size"				"75"
+	"decal_size"				"100"
 
 	"fx_fly"					"effects/weapons/dmg/fly_mp.fx"
 	"fx_detonate"				"effects/weapons/dmg/impact_default_mp.fx"
@@ -423,7 +423,7 @@ entityDef projectile_dmg_mp
 	"snd_ricochet"				"grenade_bounce"	
 	"snd_fly"					"weapon_darkmatter_energy_loop"
 
-	"friendly_impact"			"1"
+	"friendly_impact"			"0"
 
 	"fx_teleport_enter"			"effects/mp/item_teleport.fx"
 	"fx_teleport"				"effects/mp/item_teleport.fx"

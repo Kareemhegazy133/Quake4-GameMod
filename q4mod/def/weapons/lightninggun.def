@@ -178,7 +178,7 @@ entityDef weapon_lightninggun_mp
 	"triggerSize"				"32"
 
 	"range"					"736"	// q3a value is 768
-	"fireRate"				"0.04"
+	"fireRate"				"0.1"
 	"fx_trail_noimpact"			"effects/weapons/lightninggun/trail_noimpact.fx"	
 	
 	"muzzle_kick_time"			"0"

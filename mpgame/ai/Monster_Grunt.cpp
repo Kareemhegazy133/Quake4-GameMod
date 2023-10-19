@@ -200,6 +200,9 @@ void rvMonsterGrunt::OnDeath ( void ) {
 	gameLocal.mpGame.bombDefused = true;
 	gameLocal.Printf("defused, bombdefused?: %d\n", gameLocal.mpGame.bombDefused);
 	idPlayer* player = gameLocal.GetLocalPlayer();
+	gameLocal.mpGame.AddTeamScore(player->team, 2);
+	gameLocal.mpGame.GiveCashToTeam(player->team, 1000.f);
+
 	player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123017"));
 	player->mphud->HandleNamedEvent("main_notice");
 	return idAI::OnDeath ( );

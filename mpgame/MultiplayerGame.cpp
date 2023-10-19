@@ -676,6 +676,7 @@ void idMultiplayerGame::FlagCaptured( idPlayer *player ) {
 		// Announce bomb has been planted
 		gameLocal.mpGame.bombPlanted = true;
 		gameLocal.Printf("planted, bombplanted?: %d\n", gameLocal.mpGame.bombPlanted);
+		gameLocal.mpGame.GiveCashToTeam(player->team, 700.f);
 		player->mphud->SetStateString("main_notice_text", common->GetLocalizedString("#str_123016"));
 		player->mphud->HandleNamedEvent("main_notice");
 

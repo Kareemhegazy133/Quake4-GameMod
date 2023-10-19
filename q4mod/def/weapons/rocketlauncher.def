@@ -359,7 +359,7 @@ entityDef projectile_rocket
 	
 	"snd_fly"				"player_rocketlauncher_fly"
 
-	"friendly_impact"			"1"
+	"friendly_impact"			"0"
 	
 	"fx_teleport_enter"		"effects/mp/item_teleport.fx"
 	"fx_teleport"			"effects/mp/item_teleport.fx"
@@ -431,7 +431,7 @@ entityDef damage_rocketSplash
 entityDef damage_rocketSplash_mp
 {
 	"inherit"					"damage_rocketSplash"
-	"knockback"					"110"
-	"damage"					"100"
+	"knockback"					"150"
+	"damage"					"20"
 	"radius"					"360"
 }
